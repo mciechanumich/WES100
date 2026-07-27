@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem;
+           margin: 3rem auto; padding: 0 1rem; line-height: 1.6; }
+    .audio-link { display: inline-flex; align-items: center; gap: .5rem;
+                  text-decoration: none; font-weight: 600; }
+    .audio-link svg { width: 1.5rem; height: 1.5rem; }
+    figure { margin: 1.5rem 0; }
+    audio { width: 100%; }
+    .center-column {
+        width: 80%; /* Or a specific pixel value, e.g., max-width: 600px; */
+        margin-left: auto; /* Automatically distribute left space */
+        margin-right: auto; /* Automatically distribute right space */
+        background-color: #ffffff; /* White background for the column itself */
+        max-width: 800px; /* Optional: cap the maximum width on large screens */
+        padding: 20px; /* Add some space around the content */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: add a subtle shadow */
+    }
+    nav { margin-bottom: 2rem; font-size: .9rem; }
+  </style>
+  
+<script>
+</script>
+  
+  
+</head>
+<body>
+<!-- guard against the home nav link showing up on the home page itself, only want it on child pages -->
+{% unless page.url == '/' %}
+    <nav><a href="{{ '/' | relative_url }}">← Home</a></nav>
+{% endunless %}
+
+  <h1>{{ page.title }}</h1>
+
+  {{ content }}
+
+<!-- this handles a list of images -->
+  {% if page.images %}
+    <div class="gallery">
+        {% for img in page.images %}
+            <figure>
+              <img src="{{ img.src | relative_url }}" alt="{{ img.alt }}">
+              {% if img.alt %}<figcaption>{{ img.alt }}</figcaption>{% endif %}
+            </figure>
+        {% endfor %}
+    </div">
+  {% endif %}
+
+ 
+</body>
+</html>
