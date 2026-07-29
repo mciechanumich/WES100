@@ -55,8 +55,6 @@ To set up the project locally on your machine:
 
 ### 3. Coding Standards
 *   Follow the project's existing code style and formatting rules.
-*   Ensure your code passes all linting tests: `[insert lint command]`
-*   Write or update tests for any new logic or bug fixes.
 
 ### 4. Submitting a Pull Request (PR)
 When your changes are ready, submit a PR against the `main` branch:
