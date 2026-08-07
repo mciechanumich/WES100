@@ -44,6 +44,49 @@
 }
 
 
+
+/* Core table setup */
+.div-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse; /* Merges borders */
+}
+
+
+/* Row setup */
+.div-table-row {
+  display: table-row;
+  width: 100%;
+}
+
+/* Cell setup */
+.div-table-cell {
+  display: table-cell;
+  padding: 12px;
+  border: 0px solid #ddd;
+}
+
+/* Keep first column (labels) from wrapping */
+.div-table-cell:first-child {
+  white-space: nowrap;
+  width: 1%;
+}
+
+/* Header variant */
+.div-table-row.header {
+  font-weight: bold;
+  background-color: #f4e0e0;
+  border-bottom: 2px solid #333;
+}
+
+/* Light separators between data rows */
+.div-table-row:not(.header) + .div-table-row {
+  border-top: 1px solid #ddd;
+}
+
+
+
+
   </style>
   
 <script>
