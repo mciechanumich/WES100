@@ -52,7 +52,35 @@
   border-collapse: collapse; /* Merges borders */
 }
 
+/* start table2 style */
+.div-table2-cell {
+  display: table-cell;
+  padding: 12px;
+  border: 0px solid #ddd;
+}
 
+/* Row setup */
+.div-table2-row {
+  display: table-row;
+  width: 100%;
+}
+
+/* Keep first column (labels) from wrapping and right align */
+.div-table2-cell:first-child {
+  white-space: nowrap;
+  width: 1%;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Light separators between data rows */
+.div-table2-row:not(.header) + .div-table2-row {
+  border-top: 1px solid #ddd;
+}
+/* end table2 */
+
+
+/* start table1 */
 /* Row setup */
 .div-table-row {
   display: table-row;
@@ -84,6 +112,7 @@
   border-top: 1px solid #ddd;
 }
 
+/* end table1 */
 
 
 
